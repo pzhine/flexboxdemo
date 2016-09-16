@@ -8,7 +8,7 @@ var Dropdown = React.createClass({
     callback: ptypes.func.isRequired
   },
   changeOption: function(e){
-    this.props.callback(this.refs.sel.getDOMNode().value);
+    this.props.callback(this.refs.sel.value);
   },
   render: function(){
     return (

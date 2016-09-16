@@ -4,14 +4,13 @@
     "start": "node server.js"
   },
   "devDependencies": {
-    "browserify": ">=9.0.3",
-    "express": "^4.14.0",
-    "immutable": ">=3.6.2",
-    "lodash": ">=3",
-    "prettyjson": "1.0.0",
-    "react": ">=0.12.2",
-    "react-router": ">=0.12.4",
-    "reactify": ">=1.0.0",
-    "reflux": ">=0.2.6",
+    "browserify": "*",
+    "express": "*",
+    "immutable": "*",
+    "lodash": "*",
+    "react": "*",
+    "react-dom": "*",
+    "reactify": "*",
+    "reflux": "*"
   }
 }

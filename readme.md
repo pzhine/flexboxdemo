@@ -3,7 +3,7 @@ This is an interactive demonstration of the CSS3 flexbox layout model. Change th
 ## To run the app
 ```
 npm install
-npm build
+npm run build
 npm start
 ```
 Then browse to http://localhost:3000

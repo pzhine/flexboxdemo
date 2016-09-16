@@ -20,7 +20,7 @@ var childoptions = {
 var Demo = React.createClass({
   getInitialState: function(){
     return {
-      children: _.range(1,5).map(function(n){
+      children: _.range(1, 5).map(function(n){
         return _.extend(_.mapValues(childoptions,_.first),{ ID: n, order: 0, flexGrow: 0 });
       }),
       parent: _.mapValues(parentoptions,_.first),
@@ -37,6 +37,21 @@ var Demo = React.createClass({
     pointer[prop] = _.isFinite(parseInt(val)) ? parseInt(val) : val;
     this.setState(clone);
   },
+  addChild: function() {
+    var childId = this.state.children.length + 1;
+    this.setState({
+      children: this.state.children.concat(
+        _.extend(_.mapValues(childoptions,_.first),
+          { ID: childId, order: 0, flexGrow: 0 }
+        )
+      )
+    });
+  },
+  removeChild: function() {
+    this.setState({
+      children: _.slice(this.state.children, 0, this.state.children.length - 1)
+    })
+  },
   render: function(){
     var s = this.state, child = s.selectedId, cbmaker = Function.prototype.bind.bind(this.setValue,this);
     return (
@@ -50,6 +65,8 @@ var Demo = React.createClass({
             return <Child key={c.ID} def={c} selected={n===child} callback={cbmaker("selectedId",n)} />;
           },this)}
         </div>
+        <button onClick={this.removeChild}>- Fewer children</button>
+        <button onClick={this.addChild}>+ More children</button>
       </div>
     );
   }
