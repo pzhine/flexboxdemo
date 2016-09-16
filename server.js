@@ -3,7 +3,7 @@ var path = require('path');
 var express = require('express');
 var app = express();
 
-var webroot = 'public'; //relative path to directory where index.html is
+var webroot = ''; //relative path to directory where index.html is
 
 app.set('port', (process.env.PORT || 3000));
 app.use('/', express.static(path.join(__dirname, './' + webroot)));
