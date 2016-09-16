@@ -41,12 +41,6 @@ var Demo = React.createClass({
     var s = this.state, child = s.selectedId, cbmaker = Function.prototype.bind.bind(this.setValue,this);
     return (
       <div className="wrapper" key={Date() /* rebuild DOM nodes to prevent Chrome flex render bug */}>
-        <div className="explanation">
-This is an interactive demonstration of the CSS3 flexbox layout model. Change the properties of the container to see how
-it affects the layout of the children! You can also edit flex properties for individual children. Click a child to make it
-editable. There is an accompanying blog post <a href="http://blog.krawaller.se/posts/a-react-app-demonstrating-css3-flexbox/">here</a>, and 
-more info on flexbox can be found <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">here</a>.
-        </div>
         <div className="forms">
           <Form title="container" options={parentoptions} values={s.parent} callback={cbmaker("parent")} />
           <Form title={"child #"+(child+1)} options={childoptions} values={s.children[child]} callback={cbmaker("children",child)} />
