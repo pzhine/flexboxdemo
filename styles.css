@@ -5,7 +5,7 @@
 .container {
   display: flex;
   background-color: #C9FFC2;
-  height: 200px;
+  height: 75vh;
   border-radius: 5px;
   border: 1px solid #333;
   flex-wrap: wrap;
