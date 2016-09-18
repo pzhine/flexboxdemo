@@ -5,7 +5,7 @@ var app = express();
 
 var webroot = ''; //relative path to directory where index.html is
 
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 5000));
 app.use('/', express.static(path.join(__dirname, './' + webroot)));
 
 app.listen(app.get('port'), function() {
